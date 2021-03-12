@@ -2,7 +2,8 @@ from selenium import webdriver
 from Utils import OpenPage
 import time
 
-class Test_Page_01:
+
+class TestPage01:
 
     baseURL = 'https://www.onliner.by'
     username = 'fediaaa.m@gmail.com'
@@ -19,7 +20,8 @@ class Test_Page_01:
         if act_title == 'Onliner':
             assert True
         else:
-            self.driver.save_screenshot('Screenshots/test_open_page %s.png' % time.time())
+            self.driver.save_screenshot(
+                'Screenshots/test_open_page %s.png' % time.time())
             self.op.teardown()
             assert False, 'Открыта неверная страница'
 
@@ -42,6 +44,6 @@ class Test_Page_01:
 
     def test_check(self):
         assert 'Наушники и гарнитуры' in self.driver.find_element_by_xpath(
-            '//*[@id="container"]/div/div/div/div/div[2]/div[2]/div[3]/h1').text
+            '//*[@id="container"]/div/div/div/div/div[2]/div[2]/div[3]/h1')\
+            .text
         self.op.teardown()
-
