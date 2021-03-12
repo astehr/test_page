@@ -23,7 +23,7 @@ class TestPage01:
             self.driver.save_screenshot(
                 'Screenshots/test_open_page %s.png' % time.time())
             self.op.teardown()
-            assert False, 'Открыта неверная страница'
+            assert False, 'Открыта  неверная страница'
 
     def test_open_login_page(self):
         self.op.click_login_page()
